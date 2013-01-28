@@ -1,0 +1,234 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6522,        224]
+NotebookOptionsPosition[      5386,        178]
+NotebookOutlinePosition[      5741,        194]
+CellTagsIndexPosition[      5698,        191]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"link", " ", "=", " ", 
+  RowBox[{
+  "Install", "[", 
+   "\"\</Users/prak/Documents/workspace/ZeroMQ/ZeroMQ/connector/connector\>\"\
+", "]"}]}]], "Input",
+ CellChangeTimes->{{3.555624757465321*^9, 3.555624787215963*^9}, {
+  3.555624927144661*^9, 3.555624928692341*^9}}],
+
+Cell[BoxData[
+ RowBox[{"LinkObject", "[", 
+  RowBox[{"\<\"/Users/prak/Documents/workspace/ZeroMQ/ZeroMQ/connector/\
+connector\"\>", ",", "17", ",", "9"}], "]"}]], "Output",
+ CellChangeTimes->{3.555624789148539*^9, 3.555624929120723*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<ZeroMQ`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.555624842973041*^9, 3.5556248476661997`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinkPatterns", "[", "link", "]"}]], "Input",
+ CellChangeTimes->{{3.555624854757804*^9, 3.555624858071155*^9}, {
+  3.555624908873764*^9, 3.555624932591696*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"ZeroMQ`Private`ZMQBind", "[", 
+     RowBox[{
+     "ZeroMQ`Private`socket_Integer", ",", "ZeroMQ`Private`endpoint_String"}],
+      "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{
+    "ZeroMQ`Private`ZMQClose", "[", "ZeroMQ`Private`socket_Integer", "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"ZeroMQ`Private`ZMQConnect", "[", 
+     RowBox[{
+     "ZeroMQ`Private`socket_Integer", ",", "ZeroMQ`Private`endpoint_String"}],
+      "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"ZeroMQ`Private`ZMQDevice", "[", 
+     RowBox[{
+     "ZeroMQ`Private`device_Integer", ",", "ZeroMQ`Private`fsocket_Integer", 
+      ",", "ZeroMQ`Private`bsocket_Integer"}], "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{
+    "ZeroMQ`Private`ZMQInit", "[", "ZeroMQ`Private`nthreads_Integer", "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"ZeroMQ`Private`ZMQSocket", "[", 
+     RowBox[{
+     "ZeroMQ`Private`context_Integer", ",", "ZeroMQ`Private`type_Integer"}], 
+     "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{
+    "ZeroMQ`Private`ZMQTerminate", "[", "ZeroMQ`Private`context_Integer", 
+     "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"ZeroMQ`Private`ZMQVersion", "[", "]"}],
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{3.5556248584794607`*^9, 3.5556249329933653`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ZeroMQ`Private`ZMQVersion", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.555624981371932*^9, 3.55562498859216*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2", ",", "2", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.5556249890952597`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"context2", " ", "=", " ", 
+  RowBox[{"ZeroMQ`Private`ZMQInit", "[", "4", "]"}]}]], "Input",
+ CellChangeTimes->{{3.555624993383295*^9, 3.555625007195785*^9}, 
+   3.55563930548251*^9}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.5556250091594973`*^9, 3.555639307080474*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ZeroMQ`Private`ZMQTerminate", "[", "context2", "]"}]], "Input",
+ CellChangeTimes->{{3.555625028400219*^9, 3.555625042672346*^9}, 
+   3.555639326038361*^9}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.555625044478499*^9, {3.555639323290112*^9, 3.5556393264377823`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["context"], "Input",
+ CellChangeTimes->{{3.555639294384725*^9, 3.5556392956412773`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.5556392960521793`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Needs", "[", "\"\<Developer`\>\"", "]"}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.5556407564297037`*^9, 3.5556407905400887`*^9}, {
+  3.55564082343186*^9, 3.5556408467001534`*^9}, {3.555641237483061*^9, 
+  3.555641240580235*^9}, {3.555641282084696*^9, 3.555641336802202*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "99", ",", "97", ",", "110", ",", "73", ",", "32", ",", "99", ",", "111", 
+   ",", "110", ",", "118", ",", "101", ",", "114", ",", "116", ",", "32", ",",
+    "104", ",", "116", ",", "105", ",", "115"}], "}"}]], "Output",
+ CellChangeTimes->{{3.555640771875402*^9, 3.555640780224416*^9}, 
+   3.5556408471218224`*^9, {3.555641277945348*^9, 3.5556413230437727`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PackedArrayQ", "@", 
+  RowBox[{"PackedArrayForm", "[", 
+   RowBox[{"ReadList", "[", 
+    RowBox[{
+     RowBox[{"StringToStream", "[", "\"\<canI convert htis\>\"", "]"}], ",", 
+     " ", "Byte"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.555641342321414*^9, 3.555641349516777*^9}, {
+  3.55564140952291*^9, 3.555641424179261*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.5556413388040037`*^9, 3.5556413501797667`*^9}, {
+  3.555641411619822*^9, 3.555641424694805*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 856},
+WindowMargins->{{268, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 292, 7, 27, "Input"],
+Cell[874, 31, 236, 4, 27, "Output"]
+}, Open  ]],
+Cell[1125, 38, 140, 2, 27, InheritFromParent],
+Cell[CellGroupData[{
+Cell[1290, 44, 183, 3, 27, "Input"],
+Cell[1476, 49, 1354, 43, 148, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2867, 97, 138, 2, 27, "Input"],
+Cell[3008, 101, 127, 3, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3172, 109, 206, 4, 27, "Input"],
+Cell[3381, 115, 94, 1, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3512, 121, 179, 3, 27, "Input"],
+Cell[3694, 126, 121, 2, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3852, 133, 101, 1, 27, "Input"],
+Cell[3956, 136, 72, 1, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4065, 142, 348, 7, 43, "Input"],
+Cell[4416, 151, 404, 7, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4857, 163, 359, 8, 27, "Input"],
+Cell[5219, 173, 151, 2, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,5 +1,8 @@
 #include "connector.h"
 
+#include <string.h>
+
+
 /* This file should encapsulate the msg api in some way that makes sense in mathematica */
 
 int zmq_send_c(int socket_id, char *data, int option) {
@@ -10,7 +13,7 @@ int zmq_send_c(int socket_id, char *data, int option) {
 
 	/* this is an obviously dangerous thing to do */
 	length = strlen(data);
-	malloc(blob, length*sizeof(char));
+	blob = malloc(length*sizeof(char));
 	memcpy(blob, data, length);
 
 	zmq_msg_init_data(msg, blob, length, &free, NULL);
@@ -37,7 +40,7 @@ void zmq_recv_c(int socket_id, int options) {
 
 	if(options == 1) flags = ZMQ_NOBLOCK;
 	while(more == 1) {
-		zmq_recv(tbl_bet(socket_id), msg, flags);
+		zmq_recv(tbl_get(socket_id), msg, flags);
 		MLPutByteString(stdlink, zmq_msg_data(msg), zmq_msg_size(msg));
 		zmq_getsockopt(tbl_get(socket_id), ZMQ_RCVMORE, &more, len);
 	}

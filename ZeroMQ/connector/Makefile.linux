@@ -1,25 +1,25 @@
-MATHDIR = /Applications/Mathematica.app
+MATHDIR = /usr/local/Wolfram/Mathematica/9.0
 MATHLINKSDIR = ${MATHDIR}/SystemFiles/Links
-MLINKDIR = ${MATHLINKSDIR}/MathLink/DeveloperKit
-MATHINCDIR = ${MATHDIR}/SystemFIles/IncludeFiles/C
-SYS = MacOSX
+MATHINCDIR = ${MATHDIR}/SystemFiles/IncludeFiles/C
+SYS = Linux-x86-64
+MLINKDIR = ${MATHLINKSDIR}/MathLink/DeveloperKit/${SYS}
 CADDSDIR = ${MLINKDIR}/CompilerAdditions
 
 MPREP = ${CADDSDIR}/mprep
 CC = /usr/bin/cc
 LD = /usr/bin/ld
 
-INCDIRS = -I${CADDSDIR} -I/opt/local/include
-LIBDIRS = -L${CADDSDIR} -L/opt/local/lib -F${CADDSDIR}
+INCDIRS = -I${CADDSDIR}
+LIBDIRS = -L${CADDSDIR}
 
-LDFLAGS = -lc -lzmq -framework Foundation -lMLi3 -lstdc++
-EXTRAFLAGS = -macosx_version_min 10.6
-objects = connector.o zmq_wrapper.o
+LDFLAGS = -lzmq -lML64i3
+EXTRAFLAGS = --entry main
+objects = connector.o zmq_wrapper.o zmq_message.o
 
 all: connector
 
 connector: connector.tm.o ${objects}
-	${LD} -o $@ ${EXTRAFLAGS} ${LIBDIRS} ${LDFLAGS} connector.tm.o ${objects} /usr/lib/crt1.o
+	${LD} -o $@ ${EXTRAFLAGS} ${LIBDIRS} ${LDFLAGS} connector.tm.o ${objects}
 connector.o: connector.c
 	${CC} -c ${INCDIRS} $<
 connector.tm.o: connector.tm.c
